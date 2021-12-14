@@ -72,14 +72,13 @@ public class Kasir extends Person implements CRUD{ //masuk ke database kasir
     @Override
     public String updateQuery() {
         String query = String.format("update kasir set namaKasir = \'%s\',kotaKelahiran = \'%s\', tanggalLahir = \'%s\', alamat = \'%s\', noTelp = \'%s\', NIK = \'%s\', admin = \'%s\'" +
-                ", idAkun = \'%s\', passwordAkun = \'%s\' where idKasir = %s", getNama(),getKotaKelahiran(),getTanggalLahir(),getAlamat(),getNoTelp(),getNoTelp(),getNoKTP(),getAdmin(),getIdAkun(),getPasswordAkun(),getIdMember());
+                ", idAkun = \'%s\', passwordAkun = \'%s\' where idKasir = %s", getNama(),getKotaKelahiran(),getTanggalLahir(),getAlamat(),getNoTelp(),getNoKTP(),getAdmin(),getIdAkun(),getPasswordAkun(),getIdMember());
         return query;
     }
 
     @Override
     public String deleteQuery() {
-        String query = String.format("update kasir set namaKasir = NULL,kotaKelahiran = NULL, tanggalLahir = NULL, alamat = NULL, noTelp = NULL, NIK = NULL, admin = NULL" +
-                ", idAkun = NULL, passwordAkun = NULL where idKasir = %s", getIdMember());
+        String query = String.format("delete from kasir where idKasir = %s", getIdMember());
         return query;
     }
 
