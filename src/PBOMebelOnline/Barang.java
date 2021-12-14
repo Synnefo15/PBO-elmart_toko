@@ -100,8 +100,7 @@ public class Barang implements CRUD{
 
     @Override
     public String deleteQuery() {
-        String query = String.format("update barang set namaBarang = NULL,merkBarang = NULL,stok = NULL,hargaBarang = NULL, " +
-                "beratBarang = NULL, bahan = NULL, alokasi = NULL, tegangan, NULL, daya = NULL where idEkspedisi = %s", getIdBarang());
+        String query = String.format("delete from barang where idBarang = %s", getIdBarang());
         return query;
     }
 

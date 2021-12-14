@@ -42,7 +42,7 @@ public class Elektronik extends Barang implements CRUD{
     @Override
     public String updateQuery() {
         String query = String.format("update barang set namaBarang = \'%s\',merkBarang = \'%s\',stok = \'%s\',hargaBarang = \'%s\', " +
-                "beratBarang = \'%s\', bahan = NULL, alokasi = NULL, tegangan, \'%s\', daya = \'%s\' where idBarang = %s", getNamaBarang(),getMerk(), getStokBarang(),
+                "beratBarang = \'%s\', bahan = NULL, alokasi = NULL, tegangan= \'%s\', daya = \'%s\' where idBarang = %s", getNamaBarang(),getMerk(), getStokBarang(),
                 getHargaBarang(), getBeratBarang(), getVoltase(),getWatt(),getIdBarang());
         return query;
     }

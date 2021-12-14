@@ -141,7 +141,7 @@ public class Transaksi implements CRUD {
 
     @Override
     public String deleteQuery() {
-        String query = String.format("update transaksi set pelayan = NULL,member = NULL,kurir = NULL,barang = NULL,banyakBarang = NULL where idTransaksi = %s",
+        String query = String.format("delete from transaksi where idTransaksi = %s",
                 getIdTransaksi());
         return query;
     }

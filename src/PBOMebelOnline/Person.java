@@ -102,13 +102,13 @@ public class Person implements CRUD{ //masuk ke database member
 
     @Override
     public String updateQuery() {
-        String query = String.format("update member set namaMember = \'%s\',kotaKelahiran = \'%s\', tanggalLahir = \'%s\', alamat = \'%s\', noTelp = \'%s\', NIK = \'%s\' where idPerson = %s", getNama(), getKotaKelahiran(), getTanggalLahir(), getAlamat(), getNoTelp(), getNoKTP(),getIdMember());
+        String query = String.format("update member set namaMember = \'%s\',kotaKelahiran = \'%s\', tanggalLahir = \'%s\', alamat = \'%s\', noTelp = \'%s\', NIK = \'%s\' where idMember = %s", getNama(), getKotaKelahiran(), getTanggalLahir(), getAlamat(), getNoTelp(), getNoKTP(),getIdMember());
         return query;
     }
 
     @Override
     public String deleteQuery() {
-        String query = String.format("update member set namaMember = NULL,kotaKelahiran = NULL, tanggalLahir = NULL, alamat = NULL, noTelp = NULL, NIK = NULL where idPerson = %s", getIdMember());
+        String query = String.format("delete from member where idMember = %s", getIdMember());
         return query;
     }
 
@@ -164,7 +164,7 @@ public class Person implements CRUD{ //masuk ke database member
                     System.out.println("-------------");
                     searchPerson = stat.executeQuery("select * from member");
                     ResultSet rs = stat.executeQuery("select * from member;");
-                    System.out.print("idPerson");
+                    System.out.print("idMember");
                     System.out.print("    Nama");
                     System.out.print("    Kota kelahiran");
                     System.out.print("    Tanggal lahir");
@@ -172,7 +172,7 @@ public class Person implements CRUD{ //masuk ke database member
                     System.out.print("    No Telp");
                     System.out.println("    No KTP");
                     while (rs.next()) {
-                        System.out.print(rs.getString("idMember  "));
+                        System.out.print(rs.getString("idMember"));
                         System.out.print("  " + rs.getString("namaMember"));
                         System.out.print("  " + rs.getString("kotaKelahiran"));
                         System.out.print("  " + rs.getString("tanggalLahir"));
@@ -188,7 +188,7 @@ public class Person implements CRUD{ //masuk ke database member
                     System.out.println("Masukkan id atau nama member");
                     temp = dataIn.readLine();
                     while (searchPerson.next()) {
-                        if (temp.equals(searchPerson.getString("idPerson")) || temp.equals(searchPerson.getString("namaMember"))) { //mencari dengan cara mencocokkan inputan dengan idmember atau id. bisa di implemantasikan ke class barang
+                        if (temp.equals(searchPerson.getString("idMember")) || temp.equals(searchPerson.getString("namaMember"))) { //mencari dengan cara mencocokkan inputan dengan idmember atau id. bisa di implemantasikan ke class barang
                             System.out.println("Nama = " + searchPerson.getString("namaMember"));
                             System.out.println("Kota Kelahiran = " + searchPerson.getString("kotaKelahiran"));
                             System.out.println("Tanggal Lahir [DD/MM/YYYY] = " + searchPerson.getString("tanggalLahir"));
@@ -209,14 +209,14 @@ public class Person implements CRUD{ //masuk ke database member
                     System.out.println("Masukkan id member");
                     temp = dataIn.readLine();
                     while (searchPerson.next()) {
-                        if (temp.equals(searchPerson.getString("idPerson")) || temp.equals(searchPerson.getString("namaMember"))) { //mencari dengan cara mencocokkan inputan dengan idmember atau id. bisa di implemantasikan ke class barang
+                        if (temp.equals(searchPerson.getString("idMember")) || temp.equals(searchPerson.getString("namaMember"))) { //mencari dengan cara mencocokkan inputan dengan idmember atau id. bisa di implemantasikan ke class barang
                             System.out.println("Nama = " + searchPerson.getString("namaMember"));
                             System.out.println("Kota Kelahiran = " + searchPerson.getString("kotaKelahiran"));
                             System.out.println("Tanggal Lahir [DD/MM/YYYY] = " + searchPerson.getString("tanggalLahir"));
                             System.out.println("Alamat = " + searchPerson.getString("alamat"));
                             System.out.println("No Telp. = " + searchPerson.getString("noTelp"));
                             System.out.println("NIK = " + searchPerson.getString("NIK"));
-                            setIdPerson(searchPerson.getString("idPerson"));
+                            setIdPerson(searchPerson.getString("idMember"));
                             System.out.println("Apakah data ini akan diubah?[Y/N] :");
                             temp = dataIn.readLine();
                             if (temp.equalsIgnoreCase("y")) {
@@ -257,14 +257,14 @@ public class Person implements CRUD{ //masuk ke database member
                     System.out.print("Masukkan id atau nama member: ");
                     temp = dataIn.readLine();
                     while (searchPerson.next()) {
-                        if (temp.equals(searchPerson.getString("idPerson")) || temp.equals(searchPerson.getString("namaMember"))) { //mencari dengan cara mencocokkan inputan dengan idmember atau id. bisa di implemantasikan ke class barang
+                        if (temp.equals(searchPerson.getString("idMember")) || temp.equals(searchPerson.getString("namaMember"))) { //mencari dengan cara mencocokkan inputan dengan idmember atau id. bisa di implemantasikan ke class barang
                             System.out.println("Nama = " + searchPerson.getString("namaMember"));
                             System.out.println("Kota Kelahiran = " + searchPerson.getString("kotaKelahiran"));
                             System.out.println("Tanggal Lahir [DD/MM/YYYY] = " + searchPerson.getString("tanggalLahir"));
                             System.out.println("Alamat = " + searchPerson.getString("alamat"));
                             System.out.println("No Telp. = " + searchPerson.getString("noTelp"));
                             System.out.println("NIK = " + searchPerson.getString("NIK"));
-                            setIdPerson(searchPerson.getString("idPerson"));
+                            setIdPerson(searchPerson.getString("idMember"));
                             System.out.print("Apakah anda ingin menghapus data ini? [Y/N]: ");
                             temp = dataIn.readLine();
                             if (temp.equalsIgnoreCase("y")) {
