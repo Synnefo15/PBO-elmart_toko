@@ -9,12 +9,12 @@ public class Ekspedisi implements CRUD {
 
     private BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
 
+    // *===Atribut====
     private String idKurir;
     private String namaKurir;
     private int hargaPerkilo;
-//    private ArrayList<String> zonaPelayanan = new ArrayList<String>();
 
-
+    // *===Set Get Method====
     public String getIdKurir() {
         return idKurir;
     }
@@ -47,7 +47,8 @@ public class Ekspedisi implements CRUD {
 
     }
 
-    public Ekspedisi() { //contructor
+    // *===Konstruktor===
+    public Ekspedisi() { 
         this.namaKurir = namaKurir;
         this.hargaPerkilo = hargaPerkilo;
     }
@@ -66,7 +67,7 @@ public class Ekspedisi implements CRUD {
 
     @Override
     public String deleteQuery() {
-        String query = String.format("update ekspedisi set namaEkspedisi = NULL,hargaPerkilo = NULL where idEkspedisi = %s", getIdKurir());
+        String query = String.format("delete from ekspedisi where idEkspedisi = %s", getIdKurir());
         return query;
     }
 

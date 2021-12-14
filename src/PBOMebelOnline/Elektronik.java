@@ -6,9 +6,11 @@ import java.io.*;
 public class Elektronik extends Barang implements CRUD{
     private BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
 
+    // *===Atribut===
     private int voltase;
     private int watt;
 
+    // *===Set Get Method===
     public int getVoltase() {
         return voltase;
     }

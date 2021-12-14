@@ -15,6 +15,7 @@ public class Barang implements CRUD{
     private int hargaBarang;
     private int beratBarang;
 
+    // * ===Konstruktor===
     public Barang() {
         this.namaBarang = namaBarang;
         this.merk = merk;
@@ -23,16 +24,14 @@ public class Barang implements CRUD{
         this.beratBarang = beratBarang;
     }
 
+    // * ===Set Get Method===
+
     public String getIdBarang() {
         return idBarang;
     }
 
     public void setIdBarang(String idBarang) {
-
         this.idBarang = idBarang;
-
-
-
     }
 
     public String getNamaBarang() {
@@ -75,28 +74,29 @@ public class Barang implements CRUD{
         this.beratBarang = beratBarang;
     }
 
+    // * Method show barang
     public void showBarang(){
-        System.out.print("Nama barang adalah:");
+        System.out.print("Nama barang adalah: ");
         System.out.println(getNamaBarang());
-        System.out.print("Nama merk adalah:");
+        System.out.print("Nama merk adalah: ");
         System.out.println(getMerk());
-        System.out.print("Jumlah persediaannya adalah:");
+        System.out.print("Jumlah persediaannya adalah: ");
         System.out.println(getStokBarang());
-        System.out.print("Harga barangnya adalah:");
+        System.out.print("Harga barangnya adalah: ");
         System.out.println(getHargaBarang());
-        System.out.print("Berat barangnya adalah:");
+        System.out.print("Berat barangnya adalah: ");
         System.out.println(getBeratBarang());
     }
 
     @Override
     public String createQuery() {
         return null;
-    } //not used
+    } 
 
     @Override
     public String updateQuery() {
         return null;
-    } //not used
+    } 
 
     @Override
     public String deleteQuery() {

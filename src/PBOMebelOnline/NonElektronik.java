@@ -5,6 +5,8 @@ import java.io.*;
 
 public class NonElektronik extends Barang implements CRUD {
     private BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
+
+    // *===atribut===
     private String bahan; //misal pvc, kayu mahoni, kayu jati, alumunium, dll
     private String alokasi; //misal ruang makan, ruang tidur, ruang santai, dll
 

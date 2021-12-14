@@ -6,6 +6,7 @@ import java.sql.*;
 public class Person implements CRUD{ //masuk ke database member
     private BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
 
+    // *===Atribut===
     private String idPerson;
     private String nama;
     private String alamat;

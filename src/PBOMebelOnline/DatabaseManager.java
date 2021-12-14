@@ -22,7 +22,6 @@ public class DatabaseManager {
     }
 
     public void createNewTable() throws ClassNotFoundException, SQLException {
-//        System.out.println("Membuat tabel");
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:MebelOnline.db");
@@ -45,19 +44,9 @@ public class DatabaseManager {
         }
         stat = conn.createStatement();
 
-//        stat.executeUpdate("drop table member");
 
-
-
-        //Initializing table
-//        stat.executeUpdate("drop table ekspedisi");
-//        stat.executeUpdate("drop table kasir");
-//        stat.executeUpdate("drop table member");
-//        stat.executeUpdate("drop table barang");
-//        stat.executeUpdate("drop table transaksi");
 
         System.out.println("Membuat tabel");
-//        nama,provinsi,kota,alamat,tanggalLahir, noTelp,noKTP
         try {
             stat.executeUpdate("create table ekspedisi (" +
                     "idEkspedisi INTEGER PRIMARY KEY," +

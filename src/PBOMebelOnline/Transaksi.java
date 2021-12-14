@@ -113,6 +113,7 @@ public class Transaksi implements CRUD {
         this.total = total;
     }
 
+    // *===Konstruktor===
     public Transaksi() {
         this.idTransaksi = idTransaksi;
         this.idPegawai = idPegawai;
