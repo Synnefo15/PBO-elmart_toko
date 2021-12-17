@@ -114,11 +114,11 @@ public class Barang implements CRUD{
         menuBarang:
         while (true) {
             System.out.println("Pilih menu transaksi: " +
-                    "\n1.Tambah data barang meubel" +
+                    "\n1.Tambah data barang non elektronik" +
                     "\n2.Tambah data barang elektronik" +
                     "\n3.Lihat daftar barang" +
                     "\n4.Telusuri barang" +
-                    "\n5.Edit data barang meubel" +
+                    "\n5.Edit data barang non elektronik" +
                     "\n6.Edit data barang elektronik" +
                     "\n7.Hapus data barang" +
                     "\n0.Kembali");

@@ -6,6 +6,8 @@ import java.sql.*;
 
 public class Transaksi implements CRUD {
     private BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
+
+    // * ===Atribut ====
     private int idTransaksi;
     private String idPegawai;
     private String idKurir;
@@ -14,12 +16,14 @@ public class Transaksi implements CRUD {
     private int banyakBarangPerItem;
     private String hargaPerKilo;
     private String namaMember;
+
     private ArrayList<String> barang = new ArrayList<String>();
     private ArrayList<String> namaBarang = new ArrayList<String>();
     private ArrayList<Integer> hargaBarang = new ArrayList<Integer>();
     private ArrayList<Integer> banyakBarang = new ArrayList<Integer>();
     private ArrayList<Integer> beratBarang = new ArrayList<Integer>();
     private ArrayList<Integer> totalPerItem = new ArrayList<Integer>();
+
     private String kurir;
     private int total;
 
@@ -31,6 +35,8 @@ public class Transaksi implements CRUD {
         beratBarang.clear();
         totalPerItem.clear();
     }
+
+    // *===Set Get Method====
 
     public String getIdBarang() {
         return idBarang;
@@ -320,11 +326,13 @@ public class Transaksi implements CRUD {
                 case 2:
                     System.out.println("-------------");
                     System.out.print("idTransaksi");
-                    System.out.print("    Pelayan");
-                    System.out.print("    Member");
-                    System.out.print("    Kurir");
-                    System.out.print("    Barang");
-                    System.out.println("    Banyak Barang");
+                    System.out.print("    \tPelayan");
+                    System.out.print("    \tMember");
+                    System.out.print("    \tKurir");
+                    System.out.print("    \t\tBarang");
+                    System.out.println("    \t\tBanyak Barang");
+                    System.out.println("-------------");
+
                     searchTransaksi = stat.executeQuery("select t1.idTransaksi ,t4.namaKasir,t3.namaMember,t5.namaEkspedisi, t2.namaBarang, t1.banyakBarang\n" +
                             "from transaksi t1\n" +
                             "join barang t2 on t1.barang = t2.idBarang\n" +
@@ -333,12 +341,12 @@ public class Transaksi implements CRUD {
                             "join ekspedisi t5 on t1.kurir = t5.idEkspedisi\n");
                     while (searchTransaksi.next()) {
                         System.out.print(searchTransaksi.getString("idTransaksi"));
-                        System.out.print("  " + searchTransaksi.getString("namaKasir"));
+                        System.out.print(" \t\t " + searchTransaksi.getString("namaKasir"));
 
-                        System.out.print("  " + searchTransaksi.getString("namaMember"));
-
-                        System.out.print("  " + searchTransaksi.getString("namaBarang"));
-                        System.out.println("  " + searchTransaksi.getString("banyakBarang"));
+                        System.out.print(" \t\t " + searchTransaksi.getString("namaMember"));
+                        System.out.print(" \t " + searchTransaksi.getString("namaEkspedisi"));
+                        System.out.print(" \t\t " + searchTransaksi.getString("namaBarang"));
+                        System.out.println(" \t\t " + searchTransaksi.getString("banyakBarang"));
                     }
                     System.out.println();
                     System.out.println("-------------");
