@@ -1,0 +1,5 @@
+kami menggunakan Database sqlite
+
+import jar 'sqlite-jdbc' terlebih dahulu agar program dapat berjalan
+
+run file 'main.java' untuk memulai program
