@@ -345,8 +345,8 @@ public class Transaksi implements CRUD {
 
                         System.out.print(" \t\t " + searchTransaksi.getString("namaMember"));
                         System.out.print(" \t " + searchTransaksi.getString("namaEkspedisi"));
-                        System.out.print(" \t\t " + searchTransaksi.getString("namaBarang"));
-                        System.out.println(" \t\t " + searchTransaksi.getString("banyakBarang"));
+                        System.out.print(" \t\t" + searchTransaksi.getString("namaBarang"));
+                        System.out.println(" \t\t" + searchTransaksi.getString("banyakBarang"));
                     }
                     System.out.println();
                     System.out.println("-------------");
